@@ -1,20 +1,35 @@
 console.log("Hello test");
 
 var todosList = {
-    todos: ['item1', 'item1', 'item1', 'item1', 'item1', 'item1'],
+    todos: [],
     displayTodo: function () {
-        console.log('MyList :-', this.todos);
+        if (this.todos.length == 0) {
+            console.log("Please Add item in List");
+        } else {
+            console.log('MyList :-');
+            for (var i = 0; i < this.todos.length; i++) {
+                console.log(this.todos[i].todoText);
+            }
+        }
     },
-    addTodo: function (item) {
-        this.todos.push(item);
+    addTodo: function (itemText) {
+        this.todos.push({
+            todoText: itemText,
+            compeleted: true
+        });
         this.displayTodo();
     },
-    changeTodo: function (position, newvalue) {
-        this.todos[position] = newvalue;
+    changeTodo: function (position, itemText) {
+        this.todos[position].todoText = itemText;
         this.displayTodo();
     },
     deleteTodo: function (position) {
         this.todos.splice(position, 1);
+        this.displayTodo();
+    },
+    toggledCompleted: function (position) {
+        var todo = this.todos[position];
+        todo.compeleted = !todo.compeleted;
         this.displayTodo();
     }
 };
