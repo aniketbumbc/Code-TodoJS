@@ -67,9 +67,6 @@ var handlers = {
     displayTodo: function () {
         todosList.displayTodo();
     },
-    toggledAll: function () {
-        todosList.toggledAll();
-    },
     addTodo: function () {
         itemText = document.getElementById('add');
         todosList.addTodo(itemText.value);
@@ -91,5 +88,20 @@ var handlers = {
         position = document.getElementById('toggledDone');
         todosList.toggledCompleted(position.value);
         position.value = ' ';
+    },
+    toggledAll: function () {
+        todosList.toggledAll();
     }
+};
+
+var view = {
+    displayTodo:function(){       
+        var todoUl = document.querySelector('ul');
+        todoUl.innerHTML = ' ';
+        for(var i=0; i<todosList.todos.length; i++ ){          
+            var todoLi = document.createElement('li');
+            todoUl.appendChild(todoLi);
+        }
+    }
+
 };
