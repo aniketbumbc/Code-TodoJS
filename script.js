@@ -2,10 +2,10 @@ console.log("Hello test");
 
 var todosList = {
     todos: [],
-    displayTodo: function () {     
-        debugger;  
+    displayTodo: function () {
+
         if (this.todos.length === 0) {
-        
+
             console.log("Please Add item in List");
         } else {
             console.log('MyList :-');
@@ -19,7 +19,7 @@ var todosList = {
         }
     },
     addTodo: function (itemText) {
-        debugger;  
+
         this.todos.push({
             todoText: itemText,
             compeleted: false
@@ -41,7 +41,7 @@ var todosList = {
     },
     toggledAll: function () {
         ////everything is true make everything true
-        
+
         var totolTodos = this.todos.length;
         var compeletedTodo = 0;
         for (var i = 0; i < totolTodos; i++) {
@@ -54,7 +54,7 @@ var todosList = {
             for (var i = 0; i < totolTodos; i++) {
                 this.todos[i].compeleted = false;
             }
-        }else{
+        } else {
             for (var i = 0; i < totolTodos; i++) {
                 this.todos[i].compeleted = true;
             }
@@ -64,10 +64,32 @@ var todosList = {
 };
 
 var handlers = {
-    displayTodo:function(){
+    displayTodo: function () {
         todosList.displayTodo();
     },
-    toggledAll:function(){
+    toggledAll: function () {
         todosList.toggledAll();
+    },
+    addTodo: function () {
+        itemText = document.getElementById('add');
+        todosList.addTodo(itemText.value);
+        itemText.value = ' ';
+    },
+    changeTodo: function () {
+        position = document.getElementById('position');
+        itemText = document.getElementById('change');
+        todosList.changeTodo(position.value, itemText.value);
+        itemText.value = ' ';
+        position.value = ' ';
+    },
+    deleteTodo: function () {
+        position = document.getElementById('delete');
+        todosList.deleteTodo(position.value);
+        position.value = ' ';
+    },
+    toggledCompleted: function () {
+        position = document.getElementById('toggledDone');
+        todosList.toggledCompleted(position.value);
+        position.value = ' ';
     }
 };

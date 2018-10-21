@@ -2,15 +2,43 @@
 
 <html>
 <title> Todos List</title>
+
 <head>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <h1>Todo List</h1>
 
-    <button type="button" onclick="handlers.displayTodo()"> Display List </button>
-    <button type="button" onclick="handlers.toggledAll()"> Toggled All </button>
+
+    <div>
+        <button type="button" onclick="handlers.displayTodo()"> Display List </button>
+        <button type="button" onclick="handlers.toggledAll()"> Toggled All </button>
+    </div>
+
+    <div>
+        <button type="button" onclick="handlers.addTodo()"> Add Todo's </button>
+        <input type="text" id="add">
+    </div>
+
+    <div>
+        <button type="button" onclick="handlers.changeTodo()"> Update Todo's </button>
+        <strong> Please Enter Position </strong> <input type="text" id="position">
+        <strong> Please Enter Value </strong> <input type="text" id="change">
+    </div>
+
+    <div>
+        <button type="button" onclick="handlers.deleteTodo()"> Delete Todo's </button>
+        <strong> Please Enter Value to delete </strong> <input type="text" id="delete">
+    </div>
+
+    <div>
+        <button type="button" onclick="handlers.toggledCompleted()"> Toggle Done </button>
+        <strong> Please Enter Value to toggle Todo's </strong> <input type="text" id="toggledDone">
+    </div>
+
     <script src="./script.js"></script>
 
 </body>
+
 </html>
