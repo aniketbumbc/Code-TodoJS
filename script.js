@@ -2,8 +2,10 @@ console.log("Hello test");
 
 var todosList = {
     todos: [],
-    displayTodo: function () {       
+    displayTodo: function () {     
+        debugger;  
         if (this.todos.length === 0) {
+        
             console.log("Please Add item in List");
         } else {
             console.log('MyList :-');
@@ -17,6 +19,7 @@ var todosList = {
         }
     },
     addTodo: function (itemText) {
+        debugger;  
         this.todos.push({
             todoText: itemText,
             compeleted: false
@@ -60,15 +63,11 @@ var todosList = {
     }
 };
 
-var displayTodoButton = document.getElementById('displayTodoButton');
-var toggledAllButton = document.getElementById('toggledAllButton');
-console.log(displayTodoButton);
-console.log(toggledAllButton);
-
-displayTodoButton.addEventListener('click',function(){
-    todosList.displayTodo();
-});
-
-toggledAllButton.addEventListener('click',function(){
-    todosList.toggledAll();
-});
+var handlers = {
+    displayTodo:function(){
+        todosList.displayTodo();
+    },
+    addTodo:function(){
+        todosList.addTodo();
+    }
+};
