@@ -67,7 +67,7 @@ var handlers = {
     displayTodo:function(){
         todosList.displayTodo();
     },
-    addTodo:function(){
-        todosList.addTodo();
+    toggledAll:function(){
+        todosList.toggledAll();
     }
 };
