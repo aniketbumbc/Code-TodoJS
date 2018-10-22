@@ -100,6 +100,16 @@ var view = {
         todoUl.innerHTML = ' ';
         for(var i=0; i<todosList.todos.length; i++ ){          
             var todoLi = document.createElement('li');
+            var todo = todosList.todos[i].compeleted;
+
+            var textWithCompleted = '';
+            if(todo === true)
+            {
+                textWithCompleted = '(x)' + todo.todoText;
+            }else{
+                textWithCompleted = '( )' + todo.todoText; 
+            }
+            todoLi.textContent = textWithCompleted;
             todoUl.appendChild(todoLi);
         }
     }
