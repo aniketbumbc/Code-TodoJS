@@ -89,8 +89,17 @@ var view = {
                 textWithCompleted = '( )' + todo.todoText;
             }
             todoLi.textContent = textWithCompleted;
+            todoLi.appendChild(this.createDeleteButton ());
             todoUl.appendChild(todoLi);
         }
+    },
+    createDeleteButton () {
+        var deleteButton = document.createElement('button');
+     
+        deleteButton.className = ' Delete';
+        deleteButton.textContent = 'Delete List';
+
+        return deleteButton
     }
 
 };
