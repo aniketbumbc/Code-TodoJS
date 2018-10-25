@@ -23,20 +23,21 @@
             ////everything is true make everything true
             var totolTodos = this.todos.length;
             var compeletedTodo = 0;
-            for (var i = 0; i < totolTodos; i++) {
-                if (this.todos[i].compeleted === true) {
+            this.todos.forEach(function(todo) {
+                if (todo.compeleted === true) {
                     compeletedTodo++;
                 }
-            }
+            });
             //everything is true make everything false
             if (compeletedTodo === totolTodos) {
-                for (var i = 0; i < totolTodos; i++) {
-                    this.todos[i].compeleted = false;
+                    this.todos.forEach(function(todo) {
+                        todo.compeleted = false;
+                    });         
                 }
-            } else {
-                for (var i = 0; i < totolTodos; i++) {
-                    this.todos[i].compeleted = true;
-                }
+             else {
+                this.todos.forEach(function(todo) {
+                    todo.compeleted = true;
+                });  
             }
         }
     };
